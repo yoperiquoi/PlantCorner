@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ActiveDebugProfile>PlantCorner</ActiveDebugProfile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="AffichageGrandeImageMaPlante.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AffichageGrandeImagePlante.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AffichageMaPlante.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AffichagePlante.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CadreConnexion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EntêtePC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EntêtePCAvecRetour.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CadreInscription.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ModifierMaPlante.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="NavigationTest.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControlNavigation\UserChargement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControlNavigation\UserConnexion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControlNavigation\UserDoc.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControlNavigation\UserInscription.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControlNavigation\UserJeu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControlNavigation\UserSelectionConnexion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControlNavigation\UserSelectionMode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControlNavigation\UserSuccès.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ValiderSuppressionMaPlante.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ValiderSuppressionPlanteDuJeu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AffichageGrandeImageMaPlante.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AffichageGrandeImagePlante.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AffichageMaPlante.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AffichagePlante.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CadreConnexion.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EntêtePC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EntêtePCAvecRetour.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CadreInscription.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ModifierMaPlante.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="NavigationTest.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControlNavigation\UserChargement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControlNavigation\UserConnexion.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControlNavigation\UserDoc.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControlNavigation\UserInscription.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControlNavigation\UserJeu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControlNavigation\UserSelectionConnexion.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControlNavigation\UserSelectionMode.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControlNavigation\UserSuccès.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ValiderSuppressionMaPlante.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ValiderSuppressionPlanteDuJeu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

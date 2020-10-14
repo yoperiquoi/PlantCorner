@@ -1,0 +1,257 @@
+﻿<UserControl x:Class="PlantCorner.UserControlNavigation.UserJeu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PlantCorner" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border Background="LightGray">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+
+
+            <local:EntêtePCAvecRetour Grid.Column="0" Grid.ColumnSpan="5"/>
+
+           
+
+            <Viewbox Grid.Column="0" Grid.Row="1">
+                <Border Grid.Column="0" Grid.Row="1"  >
+                    <Button  Padding="5"  Width="150" Height="45" Margin="10,0" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Background="SaddleBrown" x:Name="Succes">
+                        <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding MonUtilisateur.Illustration}" />
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Margin="5,0" Text="{Binding MonUtilisateur.Pseudo}" />
+                                <TextBlock Margin="5,0" Text="{Binding MonUtilisateur.Titre}"/>
+                            </StackPanel>
+                        </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </Border>
+            </Viewbox>
+
+
+            <Viewbox Grid.Column="3" Grid.Row="3" >
+                <TabControl  Margin="10" HorizontalAlignment="Left"  BorderThickness="3" BorderBrush="Black" Width="200" Background="BlanchedAlmond">
+
+                    <TabItem Header="Plante" >
+                        <ListBox   BorderBrush="Black"  MaxHeight="350" Width="auto" Padding="40,0,10,0" ItemsSource="{Binding MonInventaire.MesPlantesInv}" >
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Border BorderThickness="2" BorderBrush="Black" Width="100" Height="50" Margin="2,0">
+                                            <StackPanel  Orientation="Horizontal" >
+                                                <Image Source="{Binding Img}" Height="30" Width="30" Margin="5"/>
+                                                <Button Width="50" Height="30"  BorderThickness="2" BorderBrush="Black" FontStyle="Oblique" Click="UtiliserPlanteInventaire_Click">
+                                                    <Button.Content>
+                                                        <materialDesign:PackIcon Kind="ArrowDownCircle" />
+                                                    </Button.Content>
+                                                    <Button.ToolTip>
+                                                        <ToolTip>
+                                                            <TextBlock>
+                                                                <TextBlock.Text>
+                                                                    <MultiBinding StringFormat="{}{0} : {1}€/min.">
+                                                                        <Binding Path="Description"/>
+                                                                        <Binding Path="GainEnArgent"/>
+                                                                    </MultiBinding>
+                                                                </TextBlock.Text>
+                                                            </TextBlock>
+                                                        </ToolTip>
+                                                    </Button.ToolTip>
+                                                </Button >
+                                            </StackPanel>
+                                        </Border>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </TabItem>
+
+                    <TabItem Header="Accessoires">
+                        <ListBox   BorderBrush="Black"  MaxHeight="350" Width="auto" Padding="40,0,10,0" ItemsSource="{Binding MonInventaire.MesAccessoiresInv}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Border BorderThickness="2" BorderBrush="Black" Width="100" Height="50" Margin="2,0">
+                                            <StackPanel  Orientation="Horizontal" >
+                                                <Image Source="{Binding Img}" Height="30" Width="30" Margin="5"/>
+                                                <Button Width="50" Height="30"  BorderThickness="2" BorderBrush="Black" FontStyle="Oblique" Click="UtiliserAccessoireInventaire_Click">
+                                                    <Button.Content>
+                                                        <materialDesign:PackIcon Kind="ArrowDownCircle" />
+                                                    </Button.Content>
+                                                    <Button.ToolTip>
+                                                        <ToolTip>
+                                                            <TextBlock>
+                                                                <TextBlock.Text>
+                                                                    <MultiBinding StringFormat="{}{0}. {1} utilisations restantes.">
+                                                                        <Binding Path="Description"/>
+                                                                        <Binding Path="NbrUtilisation"/>
+                                                                    </MultiBinding>
+                                                                </TextBlock.Text>
+                                                            </TextBlock>
+                                                        </ToolTip>
+                                                    </Button.ToolTip>
+                                                </Button >
+                                            </StackPanel>
+                                        </Border>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </TabItem>
+
+                </TabControl>
+            </Viewbox>
+
+
+
+
+
+
+            <Border Grid.Column="1" Grid.Row="1" Margin="3"  CornerRadius="15" Background="Transparent" BorderThickness="2" Padding="3" BorderBrush="Black"   x:Name="ScoreArgent" >
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" >
+                    <TextBlock.Text>
+                        <MultiBinding StringFormat="{}{0} Exp">
+                            <Binding Path="MonUtilisateur.Expérience"/>
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+            </Border>
+
+            <Border Grid.Column="2" Grid.Row="1" Margin="3"  CornerRadius="15" Background="Transparent" BorderThickness="2" Padding="3" BorderBrush="Black"  >
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" >
+                    <TextBlock.Text>
+                        <MultiBinding StringFormat="{}{0} €">
+                            <Binding Path="MonUtilisateur.Argent"/>
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+            </Border>
+
+
+
+
+            <Viewbox Grid.Column="0" Grid.Row="3" >
+                <TabControl  Margin="10" HorizontalAlignment="Left"  BorderThickness="3" BorderBrush="Black" Width="200" Background="BlanchedAlmond">
+
+                    <TabItem Header="Plante" >
+                        <ListBox   BorderBrush="Black"  MaxHeight="350" Width="auto" Padding="40,0,10,0" ItemsSource="{Binding MaBoutique.ListePlantes}" x:Name="Plantes">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Border BorderThickness="2" BorderBrush="Black" Width="100" Height="50" Margin="2,0">
+                                            <StackPanel  Orientation="Horizontal" >
+                                                <Image Source="{Binding Img}" Height="30" Width="30" Margin="5"/>
+                                                <Button Width="50" Height="30"  BorderThickness="2" BorderBrush="Black" FontStyle="Oblique" Content="{Binding Prix}" Click="AjouterPlanteBoutique_Click" x:Name="button" >
+                                                    <Button.ToolTip>
+                                                        <ToolTip>
+                                                            <TextBlock>
+                                                                <TextBlock.Text>
+                                                                    <MultiBinding StringFormat="{}{0} : {1}€/min.">
+                                                                        <Binding Path="Description"/>
+                                                                        <Binding Path="GainEnArgent"/>
+                                                                    </MultiBinding>
+                                                                </TextBlock.Text>
+                                                            </TextBlock>
+                                                        </ToolTip>
+                                                    </Button.ToolTip>
+                                                </Button >
+                                            </StackPanel>
+                                        </Border>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </TabItem>
+
+                    <TabItem Header="Accessoires">
+                        <ListBox   BorderBrush="Black"  MaxHeight="350" Width="auto" Padding="40,0,10,0" ItemsSource="{Binding MaBoutique.ListeAccessoires}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Border BorderThickness="2" BorderBrush="Black" Width="100" Height="50" Margin="2,0">
+                                            <StackPanel  Orientation="Horizontal" >
+                                                <Image Source="{Binding Img}" Height="30" Width="30" Margin="5"/>
+                                                <Button Width="50" Height="30"  BorderThickness="2" BorderBrush="Black" FontStyle="Oblique" Content="{Binding  Prix}"  Click="AjouterAccessoireBoutique_Click" >
+                                                    <Button.ToolTip>
+                                                        <ToolTip>
+                                                            <TextBlock>
+                                                                <TextBlock.Text>
+                                                                    <MultiBinding StringFormat="{}{0}. {1} utilisations au total. Le produit peut encore être acheté {2} fois.">
+                                                                        <Binding Path="Description"/>
+                                                                        <Binding Path="NbrUtilisation"/>
+                                                                        <Binding Path="NbrFoisAchetable"/>
+                                                                    </MultiBinding>
+                                                                </TextBlock.Text>
+                                                            </TextBlock>
+                                                        </ToolTip>
+                                                    </Button.ToolTip>
+                                                </Button >
+                                            </StackPanel>
+                                        </Border>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </TabItem>
+
+                </TabControl>
+            </Viewbox>
+
+            <Border Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="3" Height="auto" Width="auto" Margin="5,5,5,5" Background="ForestGreen">
+                <ListBox   BorderBrush="Black"  MaxHeight="700" Width="auto" Padding="40,0,10,0" ItemsSource="{Binding ListePlantesPlanté}" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel Width="auto">
+                                <Image Source="{Binding Img}" Margin="10" Height="100" Width="100"/>
+                                <Button Height="50" Width="50" VerticalAlignment="Top" HorizontalAlignment="Right" Click="SupprimerPlante_Click" Background="Transparent" BorderBrush="Transparent">
+                                    <Button.Content>
+                                        <Image Source="../Img/IconeSuppr.jpg"/>
+                                    </Button.Content>
+                                </Button>
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0} : {1}€ par minute">
+                                            <Binding Path="Nom"/>
+                                            <Binding Path="GainEnArgent"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                                <WrapPanel.ToolTip>
+                                    <ToolTip>
+                                        <TextBlock Width="55" TextWrapping="Wrap" FontFamily="cyrilic" Text="{Binding Description}" ></TextBlock>
+                                    </ToolTip>
+                                </WrapPanel.ToolTip>
+                            </WrapPanel>
+                            
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Border>
+
+
+            <TextBlock Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">
+                <TextBlock.Text>
+                    <MultiBinding StringFormat="{}{0}/{1} Plantes">
+                        <Binding Path="NbPlante"/>
+                        <Binding Path="NbPlaceDispo"/>
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+
+        </Grid>
+    </Border>
+</UserControl>

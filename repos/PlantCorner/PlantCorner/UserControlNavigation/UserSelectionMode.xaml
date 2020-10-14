@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="PlantCorner.UserControlNavigation.UserSelectionMode"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PlantCorner" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Background="LightGray">
+        <local:EntêtePC/>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <materialDesign:Card Height="220" Width="165"/>
+            <Border BorderThickness="3" CornerRadius="20" Grid.Column="0"  >
+                <Button Background="Navy" Content="Documentation" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20" Width="150" Height="200" x:Name="ToDoc"/>
+            </Border>
+            <materialDesign:Card Height="220" Width="165" Grid.Column="1" />
+            <Border BorderThickness="3" CornerRadius="20"  Grid.Column="1">
+                <Button Background="SeaGreen" Content="Jeu" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20" Width="150" Height="200" x:Name="ToJeu"/>
+            </Border>
+
+
+        </Grid>
+    </StackPanel>
+</UserControl>

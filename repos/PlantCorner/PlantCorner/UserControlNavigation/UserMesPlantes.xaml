@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="PlantCorner.UserMesPlantes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PlantCorner"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <local:NullToVisibilityConverterMesPlantes x:Key="NullToVisibilityConverterMesPlantes"/>
+    </UserControl.Resources>
+    <Grid Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+        <Button  Background="IndianRed" BorderBrush="Black" Content="Retour" MaxHeight="30" MaxWidth="80" Grid.Column="0" Margin="10,5,10,0" Height="32" VerticalAlignment="Top" Click="Button_Click" />
+        <TextBlock Text="Mes Plantes" Grid.Row="1" Grid.Column="2" FontSize="25" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+        <ListBox BorderBrush="Black" BorderThickness="2" Background="BlanchedAlmond" Grid.Row="2" HorizontalAlignment="Center" MaxWidth="300" Padding="20" ItemsSource="{Binding MesPlantes}" x:Name="Plantes" SelectionChanged="Plantes_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Nom}"/>
+                        <Image Source="{Binding Illustration}" MaxHeight="100" Width="auto" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <TextBlock Text="Merci d'ajouter une ou plusieur plante à votre liste personnel ! Vous pouvez les ajouter dans l'onglet documentation (appuyez sur retour) !" Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" TextWrapping="Wrap" Visibility="{Binding NombreDePlantePersonnelle, Converter={StaticResource NullToVisibilityConverterMesPlantes}}" Margin="50"/>
+        <ScrollViewer Grid.ColumnSpan="3" Grid.Row="2" Grid.Column="1">
+            <ContentControl  Margin="10" >
+                <local:AffichageMaPlante MaPlante="{Binding SelectedItem,ElementName=Plantes}"/>
+            </ContentControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

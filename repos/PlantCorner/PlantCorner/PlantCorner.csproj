@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="IconeFemme.png" />
+    <None Remove="IconeHomme.png" />
+    <None Remove="IconeModif.png" />
+    <None Remove="IconeSuppr.jpg" />
+    <None Remove="Img\fondherbe.jpg" />
+    <None Remove="LogoPC.png" />
+    <None Remove="Img\jacinthe.jpg" />
+    <None Remove="Img\violette.jpg" />
+    <None Remove="Img\tulipe.jpg" />
+	<None Remove="Img\dahlia.jpg" />
+    <None Remove="Img\tournesol.jpg" />
+    <None Remove="Img\rose.jpg" />
+    <None Remove="Img\pivoine.jpg" />
+    <None Remove="Img\petunia.jpg" />
+    <None Remove="Img\geranium.jpg" />
+	<None Remove="Img\plante1.jfif" />
+	<None Remove="Img\plante2.jpg" />
+	<None Remove="Img\plante3.jpg" />
+	<None Remove="Img\plante4.jpg" />
+	<None Remove="Img\plante5.jpg" />
+	<None Remove="Img\plante7.jfif" />
+	<None Remove="Img\abeille.jpg" />
+	<None Remove="Img\abeille.png" />
+	<None Remove="Img\engrais.jpg" />
+	<None Remove="Img\pelle.jpg" />
+	<None Remove="Img\soleil.jpg" />
+	<None Remove="Img\medaille1.jpg" />
+	<None Remove="Img\medaille2.jpg" />
+	<None Remove="Img\medaille3.jpg" />
+	<None Remove="Img\medaille5.png" />
+	<None Remove="Img\Jardinier.jpg" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Modèle.Documentation\Modèle.Documentation.csproj" />
+    <ProjectReference Include="..\Modèle.Jeu\Modèle.Jeu.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Img\IconeFemme.png" />
+    <Resource Include="Img\IconeHomme.png" />
+    <Resource Include="Img\IconeModif.png" />
+    <Resource Include="Img\IconeSuppr.jpg" />
+    <Resource Include="Img\LogoPC.png" />
+    <Resource Include="Img\jacinthe.jpg" />
+    <Resource Include="Img\violette.jpg" />
+    <Resource Include="Img\tulipe.jpg" />
+    <Resource Include="Img\tournesol.jpg" />
+    <Resource Include="Img\rose.jpg" />
+	<Resource Include="Img\dahlia.jpg" />
+    <Resource Include="Img\pivoine.jpg" />
+    <Resource Include="Img\petunia.jpg" />
+    <Resource Include="Img\geranium.jpg" />
+    <Resource Include="Img\plante1.jfif" />
+	<Resource Include="Img\plante2.jpg" />
+	<Resource Include="Img\plante3.jpg" />
+	<Resource Include="Img\plante4.jpg" />
+	<Resource Include="Img\plante5.jpg" />
+    <Resource Include="Img\plante7.jfif" />
+	<Resource Include="Img\abeille.jpg" />
+	<Resource Include="Img\abeille.png" />
+	<Resource Include="Img\engrais.jpg" />
+	<Resource Include="Img\pelle.jpg" />
+	<Resource Include="Img\soleil.jpg" />
+	<Resource Include="Img\medaille1.jpg" />
+	<Resource Include="Img\medaille2.jpg" />
+	<Resource Include="Img\medaille3.jpg" />
+	<Resource Include="Img\medaille5.png" />
+	<Resource Include="Img\Jardinier.jpg" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Update="C:\Users\Yoann\Desktop\DUT INFO\ProjetPc\App.xaml" Link="App.xaml" />
+  </ItemGroup>
+
+</Project>

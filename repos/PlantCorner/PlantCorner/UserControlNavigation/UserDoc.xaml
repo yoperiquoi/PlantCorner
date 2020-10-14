@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="PlantCorner.UserDoc"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PlantCorner"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ContentControl />
+        <Button Content="Retour" Background="IndianRed" BorderBrush="Black" MaxHeight="30" MaxWidth="80" Grid.Column="0" Margin="10,5,10,0" Height="32" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Background="OliveDrab" BorderBrush="Black" Content="Mes Plantes" MaxHeight="30" MaxWidth="120" Margin="20,0,20,0" Height="32" VerticalAlignment="Center" Grid.Row="1" x:Name="MesPlantes"/>
+        <local:SearchBox Grid.ColumnSpan="2" Grid.Column="1" Margin="10" x:Name="SearchBox"/>
+
+        <ListBox BorderBrush="Black" BorderThickness="2" Background="BlanchedAlmond" Grid.Row="2" HorizontalAlignment="Center"  Padding="10" ItemsSource="{Binding LesPlantes}" x:Name="Plantes" Margin="0,25,0,0" SelectionChanged="Plantes_SelectionChanged"  ItemTemplate="{DynamicResource Plante}">
+
+        </ListBox>
+        <Rectangle Fill="Black" Height="auto" Grid.Column="0" Grid.Row="2" Width="1" HorizontalAlignment="Right" Margin="0,20,0,0"/>
+        <TextBlock Text="Couleurs :"  Grid.Row="1" Grid.Column="2" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Text="Saisons :"  Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" FontSize="15" HorizontalAlignment="Left"/>
+        <ComboBox Grid.Row="1" Grid.Column="2" Height="25" Margin="35,0,0,0" HorizontalAlignment="Center" Width="90" x:Name="Couleur_Combobox" SelectionChanged="Couleur_Combobox_SelectionChanged"/>
+        <ComboBox  Grid.Row="1" Grid.Column="3" Height="25" Width="90" HorizontalAlignment="Center" Margin="25,0,0,0" x:Name="Saison_Combobox" SelectionChanged="Saison_Combobox_SelectionChanged"/>
+
+        <TextBlock Text="Filtres :" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Right" Margin="0,0,20,0"/>
+        <Image Source="../Img/LogoPC.png" Grid.Column="3" MaxHeight="25" HorizontalAlignment="Right" Margin="10"/>
+        <Button Background="IndianRed" BorderBrush="Black" Content="Réinitialiser" MaxHeight="30" MaxWidth="120" Grid.Column="1" Grid.Row="1"  Height="32" HorizontalAlignment="Left" Click="Reinitialiser_Click"/>
+        <ScrollViewer Grid.ColumnSpan="3" Grid.Row="2" Grid.Column="1">
+            <ContentControl  Margin="10">
+                <local:AffichagePlante Plante="{Binding SelectedItem,ElementName=Plantes}"/>
+            </ContentControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
