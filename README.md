@@ -1,7 +1,7 @@
 # PlantCorner
 Application Master/Detail réalisé en C#,.NET avec une interface en XAML/WPF.
 
-Réalisé par Yoann PERIQUOI et Thomas BLANC du Groupe 5 de 1ère année de DUT INFORMATIQUE de Clermont-Ferrand de 2020.
+Réalisé par Yoann PERIQUOI et Thomas BLANC du Groupe 5 de 1ère année de DUT INFORMATIQUE de Clermont-Ferrand de 2020 sur un délai de 7 semaines.
 
 Merci de consulter le document ContextePC.docx se trouvant dans le dossier Documents du repository.
 C'est dans ce document que l'on retrouve l'architecture du projet ainsi qu'un développement plus poussé sur les parties personnelles ajoutées au projet.
